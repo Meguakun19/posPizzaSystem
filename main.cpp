@@ -12,7 +12,7 @@ public:
     double pepperoni; //stores # of pepperonis on the pizza
     double peppers; //stores # of peppers on the pizza
     double sardines; //stores # of sardines on the pizza
-    int cheese; // stores # of cheese orders
+    char cheese; // stores # of cheese orders
     double totalToppings; //stores # of totalToppings on the pizza
 
     //functions
@@ -21,13 +21,13 @@ public:
     void setPizzaSize(char pizzaSize1);
 
     void setCheese(char cheeseOption);
-    void setSausage(int sausageQuantity);
+    void setSausage(double sausageQuantity);
 
-    void setPepperoni(int pepperoniQuantity);
+    void setPepperoni(double pepperoniQuantity);
 
-    void setPeppers(int pepperQuantity);
+    void setPeppers(double pepperQuantity);
 
-    void setSardines(int sardinesQuantity);
+    void setSardines(double sardinesQuantity);
 
     const char getCrustType();
 
@@ -35,7 +35,7 @@ public:
 
     void resetToppings();
 
-    //void noCh();
+
     const double calcCost();
 
     const double totalToppings1();
@@ -53,6 +53,22 @@ int main() {
 
     //Crust Type input
     cout << "Welcome to Morris Big Pizza Shack!" << endl;
+
+
+
+
+
+    cout << "Please take time to look over our menu and make your choice through this awesome POS System. \r\n"<<endl;
+    cout << "Pan Crust Small = $10.00;\n"<< "Pan Crust Medium = $14.00;\n"<< "Pan Crust Large = $17.00;\n"<< "Thin Crust Small = $10.00;\n"<< "Thin Crust Medium = $14.00;\n"<< "Thin Crust Large = $27.00;\n"<< "Hand-tossed Small = $10.00;\n"<< "Hand-tossed Medium = $14.00;\n"<< "Hand-tossed Large = $17.00;\n"<< "Toppings = $2.00 \r\n";
+    cout<< "Press enter to continue";
+    getchar();
+
+
+
+
+
+
+
     cout << "Enter P for pan, T for thin, or H for hand-tossed " << endl;
     cin >> customPizza.crustType;
 
@@ -119,17 +135,23 @@ cout<< "Ok thats cool cuh......weirdo"<<endl;}
         cout << "Enter Y for cheese or Enter N for no cheese" << endl;
         cin >> cheeseYorN;
         if (cheeseYorN == 'y' || cheeseYorN == 'Y'){
-            cout << "How many orders of cheese can you handle?" << endl;
-        cin >> customPizza.cheese;
-}
+            cout << "Hell yeah, Great Choice!" << endl;
+            getchar();
+            cout<<"Press 'enter' to display your price and number of toppings!"<<endl;
+            getchar();
+
+        }
 else{
-cout<< "Ok thats cool cuh......weirdo"<<endl;}
+            getchar();
+            cout<<"Press 'enter' to display your price and number of toppings!"<<endl;
+            getchar();
+        }
 
 
 
     int protoPrice;
-cout << "The total cost of your pizza is\r\n"<<customPizza.calcCost()<<endl;
-cout<<"The total number of toppings are: "<<customPizza.totalToppings1()<<endl;
+    cout<<"Each topping is worth $2 and The total number of toppings you ordered are: "<<customPizza.totalToppings1()<<endl;
+    cout << "\r\n So, the total cost of your pizza is $"<<customPizza.calcCost()<<".00\r\n\r\n";
 return 0;
 
 
@@ -172,7 +194,7 @@ const double Pizza::calcCost() {
         costOfPizza = HandtossedLarge;
 
    costOfToppings = Pizza::totalToppings1() * Toppings12; //the cost of all of the toppings
-            totalCostofMeal = costOfPizza + totalToppings;
+            totalCostofMeal = costOfPizza + costOfToppings;
             return totalCostofMeal;
 }
 
@@ -198,19 +220,19 @@ const char Pizza::getPizzaSize() {
     return pizzaSize;
 }
 
-void Pizza::setPepperoni(int pepperoniQuantity) {
+void Pizza::setPepperoni(double pepperoniQuantity) {
     pepperoni = pepperoniQuantity;
 }
 
-void Pizza::setSausage(int sausageQuantity) {
+void Pizza::setSausage(double sausageQuantity) {
     sausage = sausageQuantity;
 }
 
-void Pizza::setPeppers(int pepperQuantity) {
+void Pizza::setPeppers(double pepperQuantity) {
     peppers = pepperQuantity;
 }
 
-void Pizza::setSardines(int sardinesQuantity) {
+void Pizza::setSardines(double sardinesQuantity) {
     sardines = sardinesQuantity;
 }
 
